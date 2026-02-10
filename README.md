@@ -26,12 +26,12 @@ $ ansible-galaxy install nvidia.nvidia_driver
 | Variable                            | Default value                   | Description                                                                                                           |
 |-------------------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `nvidia_driver_package_state`       | `"present"`                     | Package state for NVIDIA driver packages                                                                              |
-| `nvidia_driver_package_version`     | `""`                            | Package version to install. Note that this should match the actual version of the deb or RPM package to be installed. |
+| `nvidia_driver_package_version`     | `"580.95.05-0ubuntu0.22.04.2"`  | Package version to install. Note that this should match the actual version of the deb or RPM package to be installed. |
 | `nvidia_driver_persistence_mode_on` | `yes`                           | Whether to enable persistence mode (boolean)                                                                          |
 | `nvidia_driver_skip_reboot`         | `no`                            | Whether to skip rebooting the node during the install                                                                 |
 | `nvidia_driver_module_file`         | `"/etc/modprobe.d/nvidia.conf"` | Filename to use for NVIDIA driver parameters                                                                          |
 | `nvidia_driver_module_params`       | `""`                            | Parameters to pass to the NVIDIA driver                                                                               |
-| `nvidia_driver_branch`              | `"515"`                         | Default driver branch to install                                                                                      |
+| `nvidia_driver_branch`              | `"580"`                         | Default driver branch to install                                                                                      |
 
 ### Red Hat specific variables
 
