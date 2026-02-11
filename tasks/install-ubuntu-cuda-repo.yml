@@ -41,3 +41,17 @@
     purge: "{{ nvidia_driver_package_state == 'absent' }}"
   register: install_driver
   environment: "{{proxy_env if proxy_env is defined else {}}}"
+
+- name: Install datacenter-gpu-manager
+  ansible.builtin.apt:
+    name: datacenter-gpu-manager-4-cuda13
+    state: present
+    install-recommends: true
+
+- name: Manage state of nvidia-dcgm
+  ansible.builtin.systemd:
+    name: nvidia-dcgm
+    daemon_reload: yes
+    daemon_reload: true
+    enabled: "{{ nvidia_dcgm_enabled | bool }}"
+    state: "{{ nvidia_dcgm_started | bool | ternary('started', 'stopped') }}"
